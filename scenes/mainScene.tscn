@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bh8nhq7ivcyqe"]
+[gd_scene load_steps=28 format=4 uid="uid://bh8nhq7ivcyqe"]
 
 [ext_resource type="Script" uid="uid://d2donpu8p2oap" path="res://scripts/main_scene.gd" id="1_w16ng"]
 [ext_resource type="Texture2D" uid="uid://d8agvcyid665" path="res://assets/images/tempbackground.jpg" id="2_1jq6i"]
@@ -159,6 +159,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_dmtm4"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.636364)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1xypn"]
+gradient = SubResource("Gradient_dmtm4")
+width = 40
+height = 30
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Node2D" type="Node2D"]
 material = SubResource("CanvasItemMaterial_61od6")
 script = ExtResource("1_w16ng")
@@ -244,13 +256,27 @@ texture = ExtResource("8_dmtm4")
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_ybfn7")
 animation = &"idle"
-frame_progress = 0.374635
+frame_progress = 0.442985
+
+[node name="PointLight2D2" type="PointLight2D" parent="player"]
+scale = Vector2(20, 20)
+energy = 0.7
+texture = SubResource("GradientTexture2D_1xypn")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1713, 942)
 
 [node name="Node2D2" type="Node2D" parent="."]
 position = Vector2(1837, 947)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1843, 897)
+scale = Vector2(5, 5)
+energy = 0.5
+texture = SubResource("GradientTexture2D_1xypn")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.10748, 0.10748, 0.10748, 1)
 
 [connection signal="body_entered" from="guard/guardViewArea" to="guard" method="_on_guard_view_area_body_entered"]
 [connection signal="body_exited" from="guard/guardViewArea" to="guard" method="_on_guard_view_area_body_exited"]
