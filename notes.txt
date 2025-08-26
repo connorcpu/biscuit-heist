@@ -1,0 +1,2 @@
+guards or whatevver have directional viewing angle
+that view drops off with distance, the darker the light the faster the dropoff
