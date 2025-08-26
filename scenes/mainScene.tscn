@@ -244,7 +244,7 @@ texture = ExtResource("8_dmtm4")
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_ybfn7")
 animation = &"idle"
-frame_progress = 0.353167
+frame_progress = 0.374635
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1713, 942)
