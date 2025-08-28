@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brjehteg7j4k1"
-path="res://.godot/imported/Tyle_Set2.png-338bbd09bcda809f60cc82bbaee53ef5.ctex"
+uid="uid://c5uxjnyg7moak"
+path="res://.godot/imported/FlyingFramePlayer_E.png-13dad555a0ffe9f36d9f920c91049aa3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Tyle_Set2.png"
-dest_files=["res://.godot/imported/Tyle_Set2.png-338bbd09bcda809f60cc82bbaee53ef5.ctex"]
+source_file="res://assets/images/FlyingFramePlayer_E.png"
+dest_files=["res://.godot/imported/FlyingFramePlayer_E.png-13dad555a0ffe9f36d9f920c91049aa3.ctex"]
 
 [params]
 
