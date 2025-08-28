@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 	
 	motion_mode = MOTION_MODE_FLOATING
 	velocity = Vector2(0, 0)
-	const speed = 40
+	const speed = 100
 
 	#pos = player.get_global_position()
 	

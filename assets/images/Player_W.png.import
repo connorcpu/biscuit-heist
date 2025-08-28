@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brjehteg7j4k1"
-path="res://.godot/imported/Tyle_Set2.png-338bbd09bcda809f60cc82bbaee53ef5.ctex"
+uid="uid://kiteqv1ktusj"
+path="res://.godot/imported/Player_W.png-341ff1924846eb4fcb0e89a3aa2eca9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Tyle_Set2.png"
-dest_files=["res://.godot/imported/Tyle_Set2.png-338bbd09bcda809f60cc82bbaee53ef5.ctex"]
+source_file="res://assets/images/Player_W.png"
+dest_files=["res://.godot/imported/Player_W.png-341ff1924846eb4fcb0e89a3aa2eca9a.ctex"]
 
 [params]
 
