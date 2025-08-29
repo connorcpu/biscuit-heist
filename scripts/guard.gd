@@ -15,9 +15,10 @@ func fixLabel():
 func _process(delta: float) -> void:
 	
 	fixLabel()
+	#doRaycast()
 	
 	#var routine = [Vector2(10, 10), Vector2(510, 10), Vector2(240, 330),Vector2(510, 510), Vector2(10, 510)]
-	var routine = [Vector2(1713, 942), Vector2(1837, 947)]
+	var routine = [Vector2(1713, 742), Vector2(1837, 747)]
 	var guard = get_node(".")
 	
 	var pos = guard.get_global_position()
@@ -57,13 +58,34 @@ func _process(delta: float) -> void:
 		if routineIndx >= routine.size():
 			routineIndx = 0
 
+func doRaycast():
+	var angleDelta = (PI/5)
+	var FOV = (PI * 2) / 5
+	var i = 0 
+	#while(i < FOV/angleDelta):
+	while(i < 2):
+		var ray = castRay(((get_node(".").get_rotation()) - (FOV/2)) + (i * angleDelta))
+		if(ray.size() != 0):
+			onAlert()
+			break
+		i += 1
+
 func _on_guard_view_area_body_entered(body: Node2D) -> void:
-	
 	if(body != get_node("../player")):
 		return
 		
+	onAlert()
+
+func onAlert():
+	
+	var player = get_node("../player")
+	var diffVect = get_node(".").get_global_position() - player.get_global_position()
+	
+	var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
+	print("dist %f" % dist)
+		
 	if(alert >= 1):
-		gameOver()
+		#gameOver()
 		return
 	
 	var label = get_node("Label")
@@ -73,7 +95,7 @@ func _on_guard_view_area_body_entered(body: Node2D) -> void:
 	await get_tree().create_timer(0.5).timeout
 	
 	if(alert >= 1):
-		gameOver()
+		#gameOver()
 		return
 		
 	await get_tree().create_timer(4.5).timeout
@@ -81,10 +103,27 @@ func _on_guard_view_area_body_entered(body: Node2D) -> void:
 	alert = 0
 	label.hide()
 
+
 func _on_guard_view_area_body_exited(body: Node2D) -> void:
 	if(alert >= 1):
 		alert = 0
 	pass # Replace with function body.
+
+func castRay(angle: float) -> Dictionary:
+	
+	var rayLength = 2
+	var space_state = get_world_2d().direct_space_state
+	# use global coordinates, not local to node
+	var query = PhysicsRayQueryParameters2D.create(get_node(".").get_global_position(), get_node(".").get_global_position() + (Vector2.from_angle(angle) * rayLength) + Vector2.from_angle(get_node(".").get_rotation()), 2)
+	var result = space_state.intersect_ray(query)
+	
+	var line = Line2D.new()
+	line.add_point(Vector2(get_node(".").get_global_position()))
+	line.add_point((Vector2.from_angle(angle) * rayLength) + get_node(".").get_position() + Vector2.from_angle(get_node(".").get_rotation()))
+	#add_child(line)
+	
+	return result
+
 
 func gameOver():
 	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
