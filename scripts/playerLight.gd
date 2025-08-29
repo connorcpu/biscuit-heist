@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	await RenderingServer.frame_post_draw
 	
 	var brightness = clampf((get_color_difference().get_luminance() + 0.165) * 8.7, 0.0, 1.0)

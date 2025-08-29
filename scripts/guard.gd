@@ -1,11 +1,19 @@
 extends Sprite2D
 
+@onready var player = get_node("../player")
+
+var routine: Array
 var routineIndx = 0
 var alert = 0
-var lerp = 0
+var lerpVar = 0
 var prevRot = 0
 var speed = 20
 var inside = false
+var interuptPathFinding = false
+
+func _ready() -> void:
+	for i in get_node("path").get_children():
+		routine.append(i.get_global_position())
 
 func fixLabel():
 	var label = get_node("Label")
@@ -17,10 +25,19 @@ func _process(delta: float) -> void:
 	
 	checkPlayerLight()
 	fixLabel()
-	#doRaycast()
 	
-	#var routine = [Vector2(10, 10), Vector2(510, 10), Vector2(240, 330),Vector2(510, 510), Vector2(10, 510)]
-	var routine = [Vector2(622, -732), Vector2(935, -719)]
+	if(interuptPathFinding == false):
+		doPathFinding(delta)
+
+	#print("target: %f" % targetDir.angle())
+	#print("real target: %f" % targetAngle)
+	#print("rotation: %f" % rot)
+	#print("length: %f" % dir.length())
+	#print("lerp: %f" % lerp)
+	
+	
+
+func doPathFinding(delta: float):
 	var guard = get_node(".")
 	
 	var pos = guard.get_global_position()
@@ -43,18 +60,12 @@ func _process(delta: float) -> void:
 	if(abs(rot - targetAngle) < 0.1):
 		guard.set_global_position(guard.get_global_position() + targetDir * delta * speed)
 		guard.set_rotation(dir.angle() + (PI/2))
-		lerp = 0
+		lerpVar = 0
 		prevRot = guard.get_rotation() - (PI/2)
 	else:
-		guard.set_rotation(lerp_angle(prevRot, targetDir.angle(), lerp) + (PI/2))
-		lerp += delta
-
-	#print("target: %f" % targetDir.angle())
-	#print("real target: %f" % targetAngle)
-	#print("rotation: %f" % rot)
-	#print("length: %f" % dir.length())
-	#print("lerp: %f" % lerp)
-	
+		guard.set_rotation(lerp_angle(prevRot, targetDir.angle(), lerpVar) + (PI/2))
+		lerpVar += delta
+		
 	if(dir.length() < 5.0):
 		routineIndx += 1
 		if routineIndx >= routine.size():
@@ -74,18 +85,6 @@ func checkPlayerLight():
 	viewArea.scale = scaleVect
 	viewAreaIndicator.scale = scaleVect
 
-func doRaycast():
-	var angleDelta = (PI/5)
-	var FOV = (PI * 2) / 5
-	var i = 0 
-	#while(i < FOV/angleDelta):
-	while(i < 2):
-		var ray = castRay(((get_node(".").get_rotation()) - (FOV/2)) + (i * angleDelta))
-		if(ray.size() != 0):
-			onAlert()
-			break
-		i += 1
-
 func _on_guard_view_area_body_entered(body: Node2D) -> void:
 	if(body != get_node("../player")):
 		return
@@ -94,7 +93,6 @@ func _on_guard_view_area_body_entered(body: Node2D) -> void:
 
 func onAlert():
 	
-	var player = get_node("../player")
 	var diffVect = get_node(".").get_global_position() - player.get_global_position()
 	var label = get_node("Label")
 	var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
@@ -125,7 +123,8 @@ func onAlert():
 
 
 func _on_guard_view_area_body_exited(body: Node2D) -> void:
-	inside = false
+	if(body != get_node("../player")):
+		inside = false
 	
 
 func castRay(angle: float) -> Dictionary:
@@ -146,3 +145,25 @@ func castRay(angle: float) -> Dictionary:
 
 func gameOver():
 	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+
+func _on_hitbox_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton \
+	and event.button_index == MOUSE_BUTTON_LEFT \
+	and event.is_pressed():
+		var diffVect = get_node(".").get_global_position() - player.get_global_position()
+		var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
+		if dist < 30:
+			print("killed guard")
+			
+			get_node("../player/animator").stop()
+			get_node("../player/animator").play("fight")
+			interuptPathFinding = true
+			speed = 0
+			await get_tree().create_timer(0.4).timeout
+			
+			self.hide()
+			self.set_process(false)
+		else:
+			print("too far away6")
+		#print("clicked")
+		

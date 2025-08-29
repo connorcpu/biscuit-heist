@@ -15,20 +15,30 @@ func _process(delta: float) -> void:
 	
 	if(Input.is_action_pressed("left")):
 		velocity.x -= 100 * speed * delta
+		animator.play("flying_W")
 		
 	if(Input.is_action_pressed("right")):
 		velocity.x += 100 * speed * delta
+		animator.play("flying_E")
 		
 	if(Input.is_action_pressed("up")):
 		velocity.y -= 100 * speed * delta
+		animator.play("flying_N")
 		
 	if(Input.is_action_pressed("down")):
 		velocity.y += 100 * speed * delta
+		animator.play("flying_S")
+		
+	if(Input.is_action_pressed("sneak")):
+		velocity *= 0.5
 		
 	#player.set_global_position(pos)
 	#print("x: %f y: %f" % [pos.x, pos.y])
 	#player.move_and_collide(pos * delta)
 	player.move_and_slide()
+	
+	if(animator.get_animation() == "fight" and animator.is_playing()):
+		return
 	
 	if(velocity.length() <= 0.01):
 		animator.play("idle")
