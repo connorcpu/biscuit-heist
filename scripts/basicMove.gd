@@ -37,6 +37,9 @@ func _process(delta: float) -> void:
 	#player.move_and_collide(pos * delta)
 	player.move_and_slide()
 	
+	if(animator.get_animation() == "fight" and animator.is_playing()):
+		return
+	
 	if(velocity.length() <= 0.01):
 		animator.play("idle")
 	else:
