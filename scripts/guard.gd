@@ -66,9 +66,12 @@ func checkPlayerLight():
 	#const expectedMin = -0.165
 	#const expectedMax = -0.05
 	var brightness = clampf((rawBrightness + 0.165) * 8.7, 0.0, 1.0)
-	print("raw: %f" % rawBrightness)
-	print("brighthness: %f" % brightness)
+	var viewArea = get_node("guardViewArea")
+	var viewAreaIndicator = get_node("Polygon2D")
 	
+	var scaleVect = Vector2(0.5 + (brightness/2), 0.5 + (brightness/2))
+	viewArea.scale = scaleVect
+	viewAreaIndicator.scale = scaleVect * 2
 
 func doRaycast():
 	var angleDelta = (PI/5)
@@ -93,8 +96,8 @@ func onAlert():
 	var player = get_node("../player")
 	var diffVect = get_node(".").get_global_position() - player.get_global_position()
 	
-	var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
-	print("dist %f" % dist)
+	#var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
+	#print("dist %f" % dist)
 		
 	if(alert >= 1):
 		#gameOver()

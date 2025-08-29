@@ -215,7 +215,7 @@ script = ExtResource("4_dmtm4")
 [node name="Polygon2D" type="Polygon2D" parent="guard"]
 scale = Vector2(2, 2)
 color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(-2, 0, -134, -178, -106, -200, -68, -214, -34, -218, 20, -220, 60, -220, 100, -202, 126, -176)
+polygon = PackedVector2Array(-2, 0, -134, -178, -106, -200, -68, -214, -34, -220.5, 20, -220, 59, -215.5, 96, -197.5, 126, -176)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="guardViewArea" type="Area2D" parent="guard"]
@@ -243,6 +243,7 @@ theme_override_font_sizes/font_size = 66
 text = "!!"
 
 [node name="PointLight2D2" type="PointLight2D" parent="guard"]
+visible = false
 scale = Vector2(33.3333, 33.3333)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
