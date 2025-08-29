@@ -4,7 +4,7 @@ func _process(delta: float) -> void:
 	await RenderingServer.frame_post_draw
 	
 	var brightness = clampf((get_color_difference().get_luminance() + 0.165) * 8.7, 0.0, 1.0)
-	var indicator = get_node("../lightIndicator")
+	var indicator = get_node("../Camera2D/CanvasLayer/lightIndicator")
 	indicator.value = brightness
 	indicator.tint_progress.a = brightness
 	#var colorT = get_color_difference()

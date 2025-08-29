@@ -5,6 +5,7 @@ var alert = 0
 var lerp = 0
 var prevRot = 0
 var speed = 20
+var inside = false
 
 func fixLabel():
 	var label = get_node("Label")
@@ -19,7 +20,7 @@ func _process(delta: float) -> void:
 	#doRaycast()
 	
 	#var routine = [Vector2(10, 10), Vector2(510, 10), Vector2(240, 330),Vector2(510, 510), Vector2(10, 510)]
-	var routine = [Vector2(1713, 742), Vector2(1837, 747)]
+	var routine = [Vector2(622, -732), Vector2(935, -719)]
 	var guard = get_node(".")
 	
 	var pos = guard.get_global_position()
@@ -69,9 +70,9 @@ func checkPlayerLight():
 	var viewArea = get_node("guardViewArea")
 	var viewAreaIndicator = get_node("Polygon2D")
 	
-	var scaleVect = Vector2(0.5 + (brightness/2), 0.5 + (brightness/2))
+	var scaleVect = Vector2(1.5 + (brightness), 1.5 + (brightness))
 	viewArea.scale = scaleVect
-	viewAreaIndicator.scale = scaleVect * 2
+	viewAreaIndicator.scale = scaleVect
 
 func doRaycast():
 	var angleDelta = (PI/5)
@@ -88,41 +89,44 @@ func doRaycast():
 func _on_guard_view_area_body_entered(body: Node2D) -> void:
 	if(body != get_node("../player")):
 		return
-		
+	inside = true
 	onAlert()
 
 func onAlert():
 	
 	var player = get_node("../player")
 	var diffVect = get_node(".").get_global_position() - player.get_global_position()
-	
-	#var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
-	#print("dist %f" % dist)
+	var label = get_node("Label")
+	var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
+	print("dist %f" % dist)
 		
 	if(alert >= 1):
 		#gameOver()
+		alert = 0
+		label.hide()
 		return
 	
-	var label = get_node("Label")
+	
 	label.show()
 	alert = 1
 	
 	await get_tree().create_timer(0.5).timeout
 	
-	if(alert >= 1):
+	if(inside == true):
 		#gameOver()
+		alert = 0
+		label.hide()
 		return
 		
-	await get_tree().create_timer(4.5).timeout
+	await get_tree().create_timer(2.5).timeout
 	
 	alert = 0
 	label.hide()
 
 
 func _on_guard_view_area_body_exited(body: Node2D) -> void:
-	if(alert >= 1):
-		alert = 0
-	pass # Replace with function body.
+	inside = false
+	
 
 func castRay(angle: float) -> Dictionary:
 	
