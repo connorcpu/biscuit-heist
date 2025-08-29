@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kiteqv1ktusj"
-path="res://.godot/imported/ThePlayer_L.png-31a36f61bbb03b5a2ab44b0aab1b6a5a.ctex"
+uid="uid://clvnbgqxk2b0e"
+path="res://.godot/imported/FightAnimationPlayer.png-59069aa40e268984c306815d73982c34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ThePlayer_L.png"
-dest_files=["res://.godot/imported/ThePlayer_L.png-31a36f61bbb03b5a2ab44b0aab1b6a5a.ctex"]
+source_file="res://assets/images/FightAnimationPlayer.png"
+dest_files=["res://.godot/imported/FightAnimationPlayer.png-59069aa40e268984c306815d73982c34.ctex"]
 
 [params]
 
