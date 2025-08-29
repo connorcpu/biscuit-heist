@@ -1,16 +1,21 @@
-[gd_scene load_steps=33 format=4 uid="uid://bh8nhq7ivcyqe"]
+[gd_scene load_steps=44 format=4 uid="uid://bh8nhq7ivcyqe"]
 
 [ext_resource type="Script" uid="uid://d2donpu8p2oap" path="res://scripts/main_scene.gd" id="1_w16ng"]
 [ext_resource type="Texture2D" uid="uid://d8agvcyid665" path="res://assets/images/tempbackground.jpg" id="2_1jq6i"]
 [ext_resource type="Texture2D" uid="uid://cx1c0ic8uebas" path="res://assets/images/icon.svg" id="3_al2iq"]
 [ext_resource type="Script" uid="uid://cx2mvh0pa62hl" path="res://scripts/guard.gd" id="4_dmtm4"]
 [ext_resource type="Script" uid="uid://bwo23otxiycpl" path="res://scripts/basicMove.gd" id="5_1xypn"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="7_1xypn"]
+[ext_resource type="Script" uid="uid://bwrrdo4dsl5wu" path="res://scripts/camera.gd" id="7_1xypn"]
 [ext_resource type="Texture2D" uid="uid://cu7bvkba3sgri" path="res://assets/images/PShadow.png" id="8_dmtm4"]
 [ext_resource type="Texture2D" uid="uid://d27to0ai6rohb" path="res://assets/images/playerAnimationStrip.png" id="9_1xypn"]
 [ext_resource type="Texture2D" uid="uid://ccf2smsuvbjnc" path="res://assets/images/Tile Set.png" id="9_2n1xb"]
-[ext_resource type="Script" path="res://scripts/playerLight.gd" id="10_2n1xb"]
+[ext_resource type="Texture2D" uid="uid://clvnbgqxk2b0e" path="res://assets/images/FightAnimationPlayer.png" id="9_hnm5q"]
+[ext_resource type="Texture2D" uid="uid://c5uxjnyg7moak" path="res://assets/images/FlyingFramePlayer_E.png" id="10_0eirs"]
+[ext_resource type="Script" uid="uid://c73xnng3wmb1c" path="res://scripts/playerLight.gd" id="10_2n1xb"]
 [ext_resource type="Texture2D" uid="uid://504p3sj5ekh" path="res://assets/images/light_meter_ui.svg" id="10_fp4eh"]
+[ext_resource type="Texture2D" uid="uid://2y6wufl317ln" path="res://assets/images/FlyingFramePlayer_N.png" id="11_gg62s"]
+[ext_resource type="Texture2D" uid="uid://c47kweyjobu52" path="res://assets/images/FlyingFramePlayer.png" id="12_f44mt"]
+[ext_resource type="Texture2D" uid="uid://om0y3gu7h2ya" path="res://assets/images/FlyingFramePlayer_W.png" id="13_1s0h2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_61od6"]
 
@@ -36,6 +41,30 @@ region = Rect2(0, 0, 256, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_61od6"]
 size = Vector2(120, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khoa4"]
+atlas = ExtResource("9_hnm5q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x04a8"]
+atlas = ExtResource("9_hnm5q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7hqw"]
+atlas = ExtResource("9_hnm5q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tokr4"]
+atlas = ExtResource("9_hnm5q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt7sb"]
+atlas = ExtResource("9_hnm5q")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aslay"]
+atlas = ExtResource("9_hnm5q")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2n1xb"]
 atlas = ExtResource("9_1xypn")
@@ -87,6 +116,61 @@ region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ybfn7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khoa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x04a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7hqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tokr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt7sb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aslay")
+}],
+"loop": true,
+"name": &"fight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0eirs")
+}],
+"loop": true,
+"name": &"flying_E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_gg62s")
+}],
+"loop": true,
+"name": &"flying_N",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_f44mt")
+}],
+"loop": true,
+"name": &"flying_S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_1s0h2")
+}],
+"loop": true,
+"name": &"flying_W",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2n1xb")
@@ -435,8 +519,9 @@ texture = ExtResource("8_dmtm4")
 z_index = 3
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_ybfn7")
-animation = &"idle"
-frame_progress = 0.442985
+animation = &"fight"
+frame = 1
+frame_progress = 0.204363
 script = ExtResource("10_2n1xb")
 
 [node name="Node2D" type="Node2D" parent="."]

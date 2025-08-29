@@ -2,3 +2,4 @@
 .godot/
 *.translation
 /android/
+build/
