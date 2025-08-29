@@ -1,11 +1,18 @@
 extends Sprite2D
 
+@onready var player = get_node("../player")
+
+var routine: Array
 var routineIndx = 0
 var alert = 0
 var lerp = 0
 var prevRot = 0
 var speed = 20
 var inside = false
+
+func _ready() -> void:
+	for i in get_node("path").get_children():
+		routine.append(i.get_global_position())
 
 func fixLabel():
 	var label = get_node("Label")
@@ -20,7 +27,7 @@ func _process(delta: float) -> void:
 	#doRaycast()
 	
 	#var routine = [Vector2(10, 10), Vector2(510, 10), Vector2(240, 330),Vector2(510, 510), Vector2(10, 510)]
-	var routine = [Vector2(622, -732), Vector2(935, -719)]
+	#var routine = [Vector2(622, -732), Vector2(935, -719)]
 	var guard = get_node(".")
 	
 	var pos = guard.get_global_position()
@@ -94,7 +101,6 @@ func _on_guard_view_area_body_entered(body: Node2D) -> void:
 
 func onAlert():
 	
-	var player = get_node("../player")
 	var diffVect = get_node(".").get_global_position() - player.get_global_position()
 	var label = get_node("Label")
 	var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
@@ -146,3 +152,18 @@ func castRay(angle: float) -> Dictionary:
 
 func gameOver():
 	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+
+func _on_hitbox_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton \
+	and event.button_index == MOUSE_BUTTON_LEFT \
+	and event.is_pressed():
+		var diffVect = get_node(".").get_global_position() - player.get_global_position()
+		var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
+		if dist < 30:
+			print("killed guard")
+			self.hide()
+			self.set_process(false)
+		else:
+			print("too far away6")
+		#print("clicked")
+		
