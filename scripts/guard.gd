@@ -14,6 +14,7 @@ func fixLabel():
 
 func _process(delta: float) -> void:
 	
+	checkPlayerLight()
 	fixLabel()
 	#doRaycast()
 	
@@ -48,7 +49,7 @@ func _process(delta: float) -> void:
 		lerp += delta
 
 	#print("target: %f" % targetDir.angle())
-	##print("real target: %f" % targetAngle)
+	#print("real target: %f" % targetAngle)
 	#print("rotation: %f" % rot)
 	#print("length: %f" % dir.length())
 	#print("lerp: %f" % lerp)
@@ -57,6 +58,17 @@ func _process(delta: float) -> void:
 		routineIndx += 1
 		if routineIndx >= routine.size():
 			routineIndx = 0
+
+func checkPlayerLight():
+	await RenderingServer.frame_post_draw
+	var lighthingColour = get_node("../player/animator").get_color_difference()
+	var rawBrightness = lighthingColour.get_luminance()
+	#const expectedMin = -0.165
+	#const expectedMax = -0.05
+	var brightness = clampf((rawBrightness + 0.165) * 8.7, 0.0, 1.0)
+	print("raw: %f" % rawBrightness)
+	print("brighthness: %f" % brightness)
+	
 
 func doRaycast():
 	var angleDelta = (PI/5)

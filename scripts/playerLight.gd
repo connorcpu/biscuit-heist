@@ -2,8 +2,13 @@ extends AnimatedSprite2D
 
 func _process(delta: float) -> void:
 	await RenderingServer.frame_post_draw
-	var colorT = get_color_difference()
-	print("light R: %f, G: %f, B: %f" % [colorT.r, colorT.g, colorT.b])
+	
+	var brightness = clampf((get_color_difference().get_luminance() + 0.165) * 8.7, 0.0, 1.0)
+	var indicator = get_node("../lightIndicator")
+	indicator.value = brightness
+	indicator.tint_progress.a = brightness
+	#var colorT = get_color_difference()
+	#print("light: %f" % colorT.get_luminance())
 
 func get_color_difference() -> Color:
 	var sprite = get_node(".")
@@ -19,7 +24,7 @@ func get_color_difference() -> Color:
 	
 	view_img = view_img.get_region(crop_rect)
 	view_img.resize(sprite_tex.get_size().x, sprite_tex.get_size().y)
-	view_img.save_png("res://test2.png")
+	#view_img.save_png("res://test2.png")
 	view_img.convert(Image.FORMAT_RGBA8)
 	var final_img: Image = Image.create_empty(sprite_tex.get_size().x, sprite_tex.get_size().y, false, Image.FORMAT_RGBA8)
 	var sprite_img: Image = sprite_tex.get_image()

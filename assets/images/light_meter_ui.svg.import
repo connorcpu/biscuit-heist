@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://65on2x4u356h"
-path="res://.godot/imported/test2.png-dc930d6a9dd4d7b13b21ba611cfdebca.ctex"
+uid="uid://504p3sj5ekh"
+path="res://.godot/imported/light_meter_ui.svg-8efec20d623fa64b86eaa9bdce544b7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test2.png"
-dest_files=["res://.godot/imported/test2.png-dc930d6a9dd4d7b13b21ba611cfdebca.ctex"]
+source_file="res://assets/images/light_meter_ui.svg"
+dest_files=["res://.godot/imported/light_meter_ui.svg-8efec20d623fa64b86eaa9bdce544b7c.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
