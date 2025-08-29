@@ -1,91 +1,15 @@
-[gd_scene load_steps=33 format=4 uid="uid://bh8nhq7ivcyqe"]
+[gd_scene load_steps=28 format=4 uid="uid://bh8nhq7ivcyqe"]
 
 [ext_resource type="Script" uid="uid://d2donpu8p2oap" path="res://scripts/main_scene.gd" id="1_w16ng"]
 [ext_resource type="Texture2D" uid="uid://d8agvcyid665" path="res://assets/images/tempbackground.jpg" id="2_1jq6i"]
 [ext_resource type="Texture2D" uid="uid://cx1c0ic8uebas" path="res://assets/images/icon.svg" id="3_al2iq"]
 [ext_resource type="Script" uid="uid://cx2mvh0pa62hl" path="res://scripts/guard.gd" id="4_dmtm4"]
 [ext_resource type="Script" uid="uid://bwo23otxiycpl" path="res://scripts/basicMove.gd" id="5_1xypn"]
-[ext_resource type="Script" uid="uid://bwrrdo4dsl5wu" path="res://scripts/camera.gd" id="7_1xypn"]
 [ext_resource type="Texture2D" uid="uid://cu7bvkba3sgri" path="res://assets/images/PShadow.png" id="8_dmtm4"]
-[ext_resource type="Texture2D" uid="uid://504p3sj5ekh" path="res://assets/images/light_meter_ui.svg" id="8_fp4eh"]
 [ext_resource type="Texture2D" uid="uid://d27to0ai6rohb" path="res://assets/images/playerAnimationStrip.png" id="9_1xypn"]
 [ext_resource type="Texture2D" uid="uid://ccf2smsuvbjnc" path="res://assets/images/Tile Set.png" id="9_2n1xb"]
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_61od6"]
-[ext_resource type="Script" uid="uid://c73xnng3wmb1c" path="res://scripts/playerLight.gd" id="10_2n1xb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_61od6"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xypn"]
-texture = ExtResource("2_dmtm4")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-12:0/0 = 0
-13:0/0 = 0
-14:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
-12:1/0 = 0
-13:1/0 = 0
-14:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-12:2/0 = 0
-13:2/0 = 0
-14:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_al2iq"]
-physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_1xypn")
-
-[sub_resource type="Gradient" id="Gradient_dmtm4"]
-interpolation_color_space = 2
-offsets = PackedFloat32Array(0, 0.636364)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1xypn"]
-gradient = SubResource("Gradient_dmtm4")
-width = 40
-height = 30
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ybfn7"]
-atlas = ExtResource("8_fp4eh")
-region = Rect2(0, 128, 256, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u2jin"]
-atlas = ExtResource("8_fp4eh")
-region = Rect2(0, 0, 256, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_61od6"]
 size = Vector2(120, 192)
@@ -415,7 +339,7 @@ script = ExtResource("4_dmtm4")
 z_index = 3
 scale = Vector2(2, 2)
 color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(-2, 0, -134, -178, -106, -200, -68, -214, -34, -220.5, 20, -220, 59, -215.5, 96, -197.5, 126, -176)
+polygon = PackedVector2Array(-2, 0, -134, -178, -106, -200, -68, -214, -34, -218, 20, -220, 60, -220, 100, -202, 126, -176)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="guardViewArea" type="Area2D" parent="guard"]
@@ -443,42 +367,15 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard"]
-visible = false
-scale = Vector2(33.3333, 33.3333)
-energy = 0.7
-texture = SubResource("GradientTexture2D_1xypn")
-
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(1227.6, -316)
 scale = Vector2(0.25, 0.25)
-collision_layer = 3
 motion_mode = 1
 script = ExtResource("5_1xypn")
-
-[node name="lightIndicator" type="TextureProgressBar" parent="player"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = 172.0
-offset_right = 128.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 0
-max_value = 1.0
-step = 0.0
-value = 0.25
-fill_mode = 7
-texture_under = SubResource("AtlasTexture_ybfn7")
-texture_progress = SubResource("AtlasTexture_u2jin")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
-script = ExtResource("7_1xypn")
 
 [node name="hitbox" type="CollisionShape2D" parent="player"]
 position = Vector2(2, -8)
@@ -497,7 +394,11 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_ybfn7")
 animation = &"idle"
 frame_progress = 0.442985
-script = ExtResource("10_2n1xb")
+
+[node name="PointLight2D2" type="PointLight2D" parent="player"]
+scale = Vector2(20, 20)
+energy = 0.7
+texture = SubResource("GradientTexture2D_1xypn")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1026.6, -224)
