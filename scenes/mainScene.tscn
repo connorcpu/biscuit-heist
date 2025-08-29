@@ -1,7 +1,6 @@
-[gd_scene load_steps=44 format=4 uid="uid://bh8nhq7ivcyqe"]
+[gd_scene load_steps=43 format=4 uid="uid://bh8nhq7ivcyqe"]
 
 [ext_resource type="Script" uid="uid://d2donpu8p2oap" path="res://scripts/main_scene.gd" id="1_w16ng"]
-[ext_resource type="Texture2D" uid="uid://d8agvcyid665" path="res://assets/images/tempbackground.jpg" id="2_1jq6i"]
 [ext_resource type="Texture2D" uid="uid://cx1c0ic8uebas" path="res://assets/images/icon.svg" id="3_al2iq"]
 [ext_resource type="Script" uid="uid://cx2mvh0pa62hl" path="res://scripts/guard.gd" id="4_dmtm4"]
 [ext_resource type="Script" uid="uid://bwo23otxiycpl" path="res://scripts/basicMove.gd" id="5_1xypn"]
@@ -409,21 +408,8 @@ sources/0 = SubResource("TileSetAtlasSource_fp4eh")
 material = SubResource("CanvasItemMaterial_61od6")
 script = ExtResource("1_w16ng")
 
-[node name="background" type="TextureRect" parent="."]
-visible = false
-offset_right = 1680.0
-offset_bottom = 1050.0
-pivot_offset = Vector2(101, 81)
-texture = ExtResource("2_1jq6i")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(643, 355)
-scale = Vector2(0.5, 0.5)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(186, -12)
-scale = Vector2(4.9, 3.8)
-polygon = PackedVector2Array(4.48978, 6.84212, 9.38776, -0.526306, 4.48978, -8.94736, -28.9796, -9.47368, -30.2041, -53.6842, -36.3265, -58.9474, -41.6327, -53.6842, -42.449, -9.47368, -76.3265, -8.42105, -81.2245, 0.526321, -77.551, 6.3158, -43.2653, 7.36842, -41.2245, 52.6316, -35.9184, 57.3684, -29.7959, 52.6316, -29.3878, 7.89474)
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.10748, 0.10748, 0.10748, 1)
 
 [node name="guard" type="Sprite2D" parent="."]
 z_index = 3
@@ -541,9 +527,6 @@ position = Vector2(787, -697)
 scale = Vector2(5, 5)
 energy = 0.5
 texture = SubResource("GradientTexture2D_1xypn")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.10748, 0.10748, 0.10748, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_dmtm4")
