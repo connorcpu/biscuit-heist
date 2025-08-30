@@ -13,7 +13,7 @@ func _on_area_input_event(viewport: Node, event: InputEvent, shape_idx: int, ext
 		var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
 		print("door at dist: %f" % dist)
 		if dist < 30 and player.keycards > 0:
-			player.keycards -= 1
+			player.decrementKeycards()
 			
 			var mouse :Vector2 = get_global_mouse_position()
 			var cell :Vector2i = tilemaplayer.local_to_map(tilemaplayer.to_local(mouse))

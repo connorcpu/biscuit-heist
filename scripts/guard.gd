@@ -154,7 +154,7 @@ func _on_hitbox_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 		var diffVect = self.get_global_position() - player.get_global_position()
 		var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
 		if dist < 30:
-			player.keycards += 1
+			player.incrementKeycards()
 			
 			animator.stop()
 			#animator.play("fight")

@@ -2,9 +2,25 @@ extends CharacterBody2D
 
 @onready var animator = get_node("animator")
 @onready var keycards = 10
-@onready var player = get_node(".")
+@onready var keycardHUD = get_node("Camera2D/CanvasLayer/Label")
+
 const speed = 100
 var animationOverride = false
+
+func incrementKeycards():
+	keycards += 1
+	updateKeycardHUD()
+
+func decrementKeycards():
+	keycards -= 1
+	updateKeycardHUD()
+
+func updateKeycardHUD():
+	keycardHUD.text = "Keycards: %d" % keycards
+	pass
+
+func _ready() -> void:
+	updateKeycardHUD()
 
 func _process(delta: float) -> void:
 	
@@ -43,7 +59,7 @@ func _process(delta: float) -> void:
 	#player.set_global_position(pos)
 	#print("x: %f y: %f" % [pos.x, pos.y])
 	#player.move_and_collide(pos * delta)
-	player.move_and_slide()
+	self.move_and_slide()
 	
 	if(animationOverride):
 		return
