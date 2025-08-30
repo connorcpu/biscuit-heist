@@ -1,24 +1,26 @@
 extends AnimatedSprite2D
 
+@onready var indicator = get_node("../Camera2D/CanvasLayer/lightIndicator")
+
 func _process(_delta: float) -> void:
+	
 	await RenderingServer.frame_post_draw
 	
 	var brightness = clampf((get_color_difference().get_luminance() + 0.165) * 8.7, 0.0, 1.0)
-	var indicator = get_node("../Camera2D/CanvasLayer/lightIndicator")
+	
 	indicator.value = brightness
 	indicator.tint_progress.a = brightness
 	#var colorT = get_color_difference()
 	#print("light: %f" % colorT.get_luminance())
 
 func get_color_difference() -> Color:
-	var sprite = get_node(".")
 	# Note that sprite referes to an AnimatedSprite.
 	
 	var view_img: Image = get_viewport().get_texture().get_image()
-	var sprite_tex: Texture2D = sprite.sprite_frames.get_frame_texture(sprite.animation, sprite.frame)
+	var sprite_tex: Texture2D = sprite_frames.get_frame_texture(animation, frame)
 	#var viewport_scale: Vector2 = sprite.get_viewport_transform().get_scale()
 	var viewport_scale: Vector2 = Vector2(1, 1)
-	var sreen_pos = sprite.get_screen_transform().origin * viewport_scale
+	var sreen_pos = get_screen_transform().origin * viewport_scale
 	var crop_rect = Rect2i(sreen_pos-((sprite_tex.get_size()/2.0)*viewport_scale * 3.5), sprite_tex.get_size()*viewport_scale * 3.5)
 	# crop the viewport image to the sprites rect.
 	
