@@ -3,8 +3,8 @@
 [ext_resource type="FontFile" uid="uid://dtyy2qn2qvwsm" path="res://assets/fonts/Quaver v1.0/quaver.ttf" id="1_8rdi0"]
 [ext_resource type="Script" uid="uid://qxy75gsw5pih" path="res://scenes/winSceneMenu.gd" id="1_e4ay3"]
 
-[sub_resource type="Animation" id="Animation_11y2r"]
-resource_name = "fade"
+[sub_resource type="Animation" id="Animation_o0tnf"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -18,8 +18,8 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_o0tnf"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_11y2r"]
+resource_name = "fade"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -51,7 +51,7 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_jmdev")
 }
-autoplay = "RESET"
+autoplay = "fade"
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
