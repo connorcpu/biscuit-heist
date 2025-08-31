@@ -1,0 +1,139 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7702tqu222te"]
+
+[ext_resource type="FontFile" uid="uid://dtyy2qn2qvwsm" path="res://assets/fonts/Quaver v1.0/quaver.ttf" id="1_8rdi0"]
+[ext_resource type="Script" uid="uid://qxy75gsw5pih" path="res://scenes/winSceneMenu.gd" id="1_e4ay3"]
+
+[sub_resource type="Animation" id="Animation_o0tnf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_11y2r"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jmdev"]
+_data = {
+&"RESET": SubResource("Animation_o0tnf"),
+&"fade": SubResource("Animation_11y2r")
+}
+
+[node name="WinScene" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_e4ay3")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/CanvasModulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_jmdev")
+}
+autoplay = "fade"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.203922, 0.470588, 0.52549, 1)
+
+[node name="story" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/story"]
+layout_mode = 2
+
+[node name="header" type="MarginContainer" parent="CanvasLayer/story/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/story/VBoxContainer/header"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_8rdi0")
+theme_override_fonts/bold_font = ExtResource("1_8rdi0")
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[center][b]YOU WIN"
+fit_content = true
+
+[node name="content" type="MarginContainer" parent="CanvasLayer/story/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/story/VBoxContainer/content"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/story/VBoxContainer/content/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 25
+bbcode_enabled = true
+text = "Well I don't know what they were doing with my biscuits but they seemed extremely fasinated by them. Anyways I managed to get them back without getting detected. Just in time aswell: my kettle is done."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/story/VBoxContainer/content/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/story/VBoxContainer/content/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="mainMenu" type="Button" parent="CanvasLayer/story/VBoxContainer/content/VBoxContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8rdi0")
+theme_override_font_sizes/font_size = 33
+text = "MAIN MENU"
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/story/VBoxContainer/content/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="quit" type="Button" parent="CanvasLayer/story/VBoxContainer/content/VBoxContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8rdi0")
+theme_override_font_sizes/font_size = 33
+text = "QUIT"
+
+[connection signal="pressed" from="CanvasLayer/story/VBoxContainer/content/VBoxContainer/VBoxContainer/MarginContainer3/mainMenu" to="CanvasLayer" method="_on_mainMenu_pressed"]
+[connection signal="pressed" from="CanvasLayer/story/VBoxContainer/content/VBoxContainer/VBoxContainer/MarginContainer4/quit" to="CanvasLayer" method="_on_quit_pressed"]

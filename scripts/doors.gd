@@ -1,22 +1,23 @@
 extends Node2D
 
+@onready var player = get_node("../player")
+@onready var tilemaplayer = get_node("/root/Node2D/TileMap/Control Panels")
+@onready var sideWall = get_node("/root/Node2D/TileMap/Side Wall")
+@onready var topWall = get_node("/root/Node2D/TileMap/Top Walls")
 
 func _on_area_input_event(viewport: Node, event: InputEvent, shape_idx: int, extra_arg_0: int) -> void:
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
 	and event.is_pressed():
-		var diffVect = get_node("area%d" % extra_arg_0).get_global_position() - get_node("../player").get_global_position()
+		var diffVect = get_node("area%d" % extra_arg_0).get_global_position() - player.get_global_position()
 		var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
 		print("door at dist: %f" % dist)
-		if dist < 30:
-			print("opening door %d, at dist %f" % [extra_arg_0, dist])
-			var tilemaplayer = get_node("/root/Node2D/TileMap/Control Panels")
+		if dist < 30 and player.keycards > 0:
+			player.decrementKeycards()
+			
 			var mouse :Vector2 = get_global_mouse_position()
 			var cell :Vector2i = tilemaplayer.local_to_map(tilemaplayer.to_local(mouse))
 			var tempCoords = tilemaplayer.get_cell_atlas_coords(cell)
-			
-			var sideWall = get_node("/root/Node2D/TileMap/Side Wall")
-			var topWall = get_node("/root/Node2D/TileMap/Top Walls")
 			
 			#UP door
 			if(tempCoords == Vector2i(15, 2)):
