@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
 
 @onready var indicator = get_node("../Camera2D/CanvasLayer/lightIndicator")
+var lastColor
 
 func _process(_delta: float) -> void:
 	
@@ -15,8 +16,10 @@ func _process(_delta: float) -> void:
 
 func get_color_difference() -> Color:
 	# Note that sprite referes to an AnimatedSprite.
-	
-	var view_img: Image = get_viewport().get_texture().get_image()
+	var viewport = get_viewport()
+	if(viewport == null):
+		return lastColor
+	var view_img: Image = viewport.get_texture().get_image()
 	var sprite_tex: Texture2D = sprite_frames.get_frame_texture(animation, frame)
 	#var viewport_scale: Vector2 = sprite.get_viewport_transform().get_scale()
 	var viewport_scale: Vector2 = Vector2(1, 1)
@@ -46,5 +49,6 @@ func get_color_difference() -> Color:
 	# We need to divide the colors by their alpha, otherwise the color will be muted from empty space.
 	# We then need to subtract the base_color to compare the two colors.
 	final_color = (final_color/final_color.a) - (base_color/base_color.a)
+	lastColor = final_color
 	
 	return final_color

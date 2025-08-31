@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b7702tqu222te"]
 
 [ext_resource type="FontFile" uid="uid://dtyy2qn2qvwsm" path="res://assets/fonts/Quaver v1.0/quaver.ttf" id="1_8rdi0"]
-[ext_resource type="Script" uid="uid://qxy75gsw5pih" path="res://scenes/winSceneMenu.gd" id="1_e4ay3"]
+[ext_resource type="Script" uid="uid://qxy75gsw5pih" path="res://scripts/winSceneMenu.gd" id="1_e4ay3"]
 
 [sub_resource type="Animation" id="Animation_o0tnf"]
 length = 0.001

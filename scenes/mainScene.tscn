@@ -1,7 +1,6 @@
-[gd_scene load_steps=72 format=4 uid="uid://bh8nhq7ivcyqe"]
+[gd_scene load_steps=92 format=4 uid="uid://bh8nhq7ivcyqe"]
 
 [ext_resource type="Script" uid="uid://d2donpu8p2oap" path="res://scripts/main_scene.gd" id="1_w16ng"]
-[ext_resource type="Texture2D" uid="uid://cx1c0ic8uebas" path="res://assets/images/icon.svg" id="3_al2iq"]
 [ext_resource type="Script" uid="uid://cx2mvh0pa62hl" path="res://scripts/guard.gd" id="4_dmtm4"]
 [ext_resource type="Script" uid="uid://bwo23otxiycpl" path="res://scripts/basicMove.gd" id="5_1xypn"]
 [ext_resource type="Texture2D" uid="uid://dm5dfbyqy6q4j" path="res://assets/images/FightAnimationPlayer_E.png" id="7_hnm5q"]
@@ -17,8 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://2y6wufl317ln" path="res://assets/images/FlyingFramePlayer_N.png" id="11_gg62s"]
 [ext_resource type="Texture2D" uid="uid://c47kweyjobu52" path="res://assets/images/FlyingFramePlayer.png" id="12_f44mt"]
 [ext_resource type="Texture2D" uid="uid://om0y3gu7h2ya" path="res://assets/images/FlyingFramePlayer_W.png" id="13_1s0h2"]
-[ext_resource type="Script" path="res://scripts/doors.gd" id="16_hnm5q"]
-[ext_resource type="Script" path="res://scenes/finish_area.gd" id="19_f44mt"]
+[ext_resource type="Texture2D" uid="uid://cmauf6rpptq0d" path="res://assets/images/WalkAnimationGuard_E.png" id="15_u2jin"]
+[ext_resource type="Script" uid="uid://ot0ilqaa5482" path="res://scripts/doors.gd" id="16_hnm5q"]
+[ext_resource type="Texture2D" uid="uid://yihlcexiyuvb" path="res://assets/images/WalkAnimationGuard_N.png" id="16_khoa4"]
+[ext_resource type="Texture2D" uid="uid://c40owh7cqq5r5" path="res://assets/images/WalkAnimationGuard.png" id="17_x04a8"]
+[ext_resource type="Texture2D" uid="uid://4sry8vhker87" path="res://assets/images/WalkAnimationGuard_W.png" id="18_k7hqw"]
+[ext_resource type="Script" uid="uid://chs1f4ccgktqw" path="res://scripts/finish_area.gd" id="19_f44mt"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_61od6"]
 
@@ -373,6 +376,141 @@ fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdgl5"]
 size = Vector2(126.667, 133.334)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8v4a"]
+atlas = ExtResource("15_u2jin")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmuta"]
+atlas = ExtResource("15_u2jin")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmt3g"]
+atlas = ExtResource("15_u2jin")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xb6x"]
+atlas = ExtResource("15_u2jin")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7mwi"]
+atlas = ExtResource("16_khoa4")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emy4l"]
+atlas = ExtResource("16_khoa4")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj1mt"]
+atlas = ExtResource("16_khoa4")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfrvn"]
+atlas = ExtResource("16_khoa4")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rfp0"]
+atlas = ExtResource("17_x04a8")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnfv3"]
+atlas = ExtResource("17_x04a8")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvwj4"]
+atlas = ExtResource("17_x04a8")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5tyg"]
+atlas = ExtResource("17_x04a8")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjfno"]
+atlas = ExtResource("18_k7hqw")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0qsy"]
+atlas = ExtResource("18_k7hqw")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86fr1"]
+atlas = ExtResource("18_k7hqw")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km6uk"]
+atlas = ExtResource("18_k7hqw")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_whxvq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8v4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmuta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmt3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xb6x")
+}],
+"loop": true,
+"name": &"walk_E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7mwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emy4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj1mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfrvn")
+}],
+"loop": true,
+"name": &"walk_N",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rfp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnfv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvwj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5tyg")
+}],
+"loop": true,
+"name": &"walk_S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjfno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0qsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86fr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km6uk")
+}],
+"loop": true,
+"name": &"walk_W",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fp4eh"]
 texture = ExtResource("9_2n1xb")
@@ -745,38 +883,37 @@ sprite_frames = SubResource("SpriteFrames_ybfn7")
 animation = &"fight_S"
 script = ExtResource("10_2n1xb")
 
-[node name="guard" type="Sprite2D" parent="."]
-z_index = 3
-position = Vector2(508.245, -566.235)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
+[node name="guardNode" type="Node2D" parent="."]
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard"]
+[node name="guardViewArea" type="Area2D" parent="guardNode"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard"]
+[node name="Label" type="Label" parent="guardNode"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -784,143 +921,85 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard"]
+[node name="hitbox" type="Area2D" parent="guardNode"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="path" type="Node2D" parent="guard"]
-position = Vector2(469.979, -1015.08)
+[node name="path" type="Node2D" parent="guardNode"]
+position = Vector2(609.29, -784.477)
+scale = Vector2(0.215, 0.215)
 
-[node name="Node2D2" type="Node2D" parent="guard/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode/path"]
 position = Vector2(32.967, 897.416)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D" type="Node2D" parent="guard/path"]
+[node name="Node2D" type="Node2D" parent="guardNode/path"]
 position = Vector2(-483.971, 878.757)
 
-[node name="Node2D3" type="Node2D" parent="guard/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode/path"]
 position = Vector2(-519.41, -860.351)
 
-[node name="Node2D4" type="Node2D" parent="guard/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode/path"]
 position = Vector2(1141.36, -844.801)
 
-[node name="Node2D7" type="Node2D" parent="guard/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode/path"]
 position = Vector2(1141.98, 665.127)
 
-[node name="Node2D6" type="Node2D" parent="guard/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode/path"]
 position = Vector2(536.452, 45.917)
 
-[node name="Node2D5" type="Node2D" parent="guard/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode/path"]
 position = Vector2(59.0588, 63.333)
 
-[node name="guard2" type="Sprite2D" parent="."]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode"]
 z_index = 3
-position = Vector2(1066.02, -724.919)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
-script = ExtResource("4_dmtm4")
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="Polygon2D" type="Polygon2D" parent="guard2"]
-z_index = 3
-position = Vector2(2.66683, 0)
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
-vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
-
-[node name="guardViewArea" type="Area2D" parent="guard2"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard2/guardViewArea"]
-z_index = 3
-position = Vector2(2, 2)
-polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
-
-[node name="Label" type="Label" parent="guard2"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(18.23, 46.575)
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 66
-text = "!!"
-
-[node name="PointLight2D2" type="PointLight2D" parent="guard2"]
-visible = false
-scale = Vector2(33.3333, 33.3333)
-energy = 0.7
-texture = SubResource("GradientTexture2D_1xypn")
-
-[node name="hitbox" type="Area2D" parent="guard2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard2/hitbox"]
-shape = SubResource("RectangleShape2D_vdgl5")
-
-[node name="Node2D" type="Node2D" parent="guard2"]
-
-[node name="path" type="Node2D" parent="guard2"]
-position = Vector2(200.482, 28.2731)
-
-[node name="Node2D3" type="Node2D" parent="guard2/path"]
-position = Vector2(-220.39, 785.539)
-scale = Vector2(6.66667, 6.66667)
-
-[node name="Node2D2" type="Node2D" parent="guard2/path"]
-position = Vector2(-240.64, -862.993)
-scale = Vector2(6.66667, 6.66667)
-
-[node name="Node2D" type="Node2D" parent="guard2/path"]
-position = Vector2(-1825.75, -867.27)
-
-[node name="Node2D4" type="Node2D" parent="guard2/path"]
-position = Vector2(-1824.57, 790.351)
-
-[node name="guard22" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode3" type="Node2D" parent="."]
 position = Vector2(805.708, -718.388)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard22"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode3"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard22"]
+[node name="guardViewArea" type="Area2D" parent="guardNode3"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard22/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode3/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard22"]
+[node name="Label" type="Label" parent="guardNode3"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -928,61 +1007,69 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard22"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode3"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard22"]
+[node name="hitbox" type="Area2D" parent="guardNode3"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard22/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode3/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard22"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode3"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard22"]
+[node name="path" type="Node2D" parent="guardNode3"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D" type="Node2D" parent="guard22/path"]
+[node name="Node2D" type="Node2D" parent="guardNode3/path"]
 position = Vector2(1710.38, -71.0983)
 
-[node name="Node2D2" type="Node2D" parent="guard22/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode3/path"]
 position = Vector2(-2081.79, -85.4812)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard3" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode4" type="Node2D" parent="."]
 position = Vector2(1037.75, -500.037)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard3"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode4"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard3"]
+[node name="guardViewArea" type="Area2D" parent="guardNode4"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard3/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode4/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard3"]
+[node name="Label" type="Label" parent="guardNode4"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -990,83 +1077,91 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard3"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode4"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard3"]
+[node name="hitbox" type="Area2D" parent="guardNode4"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard3/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode4/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard3"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode4"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard3"]
+[node name="path" type="Node2D" parent="guardNode4"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D3" type="Node2D" parent="guard3/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode4/path"]
 position = Vector2(-180.808, 279.45)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard3/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode4/path"]
 position = Vector2(-155.975, -296.464)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D" type="Node2D" parent="guard3/path"]
+[node name="Node2D" type="Node2D" parent="guardNode4/path"]
 position = Vector2(-2191.56, -278.922)
 
-[node name="Node2D6" type="Node2D" parent="guard3/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode4/path"]
 position = Vector2(-2249.97, 978.182)
 
-[node name="Node2D4" type="Node2D" parent="guard3/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode4/path"]
 position = Vector2(-2663.55, 1054.28)
 
-[node name="Node2D5" type="Node2D" parent="guard3/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode4/path"]
 position = Vector2(-1120.97, 1041.84)
 
-[node name="Node2D7" type="Node2D" parent="guard3/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode4/path"]
 position = Vector2(-2144.41, 960.057)
 
-[node name="Node2D8" type="Node2D" parent="guard3/path"]
+[node name="Node2D8" type="Node2D" parent="guardNode4/path"]
 position = Vector2(-2123.38, 41.763)
 
-[node name="Node2D9" type="Node2D" parent="guard3/path"]
+[node name="Node2D9" type="Node2D" parent="guardNode4/path"]
 position = Vector2(-174.638, 67.4662)
 
-[node name="guard4" type="Sprite2D" parent="."]
-z_index = 3
-position = Vector2(786.787, -239.947)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
+[node name="guardNode5" type="Node2D" parent="."]
+position = Vector2(1037.75, -500.037)
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard4"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode5"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard4"]
+[node name="guardViewArea" type="Area2D" parent="guardNode5"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard4/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode5/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard4"]
+[node name="Label" type="Label" parent="guardNode5"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1074,74 +1169,82 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard4"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode5"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard4"]
+[node name="hitbox" type="Area2D" parent="guardNode5"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard4/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode5/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard4"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode5"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard4"]
+[node name="path" type="Node2D" parent="guardNode5"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D3" type="Node2D" parent="guard4/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode5/path"]
 position = Vector2(60.44, 42.5719)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard4/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode5/path"]
 position = Vector2(-1720.57, 309.238)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D" type="Node2D" parent="guard4/path"]
+[node name="Node2D" type="Node2D" parent="guardNode5/path"]
 position = Vector2(-2596.61, 276.414)
 
-[node name="Node2D4" type="Node2D" parent="guard4/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode5/path"]
 position = Vector2(-2572.62, -922.478)
 
-[node name="Node2D5" type="Node2D" parent="guard4/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode5/path"]
 position = Vector2(-1639.6, -907.057)
 
-[node name="Node2D6" type="Node2D" parent="guard4/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode5/path"]
 position = Vector2(-1611.33, -76.8536)
 
-[node name="guard19" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode6" type="Node2D" parent="."]
 position = Vector2(430.57, -270.333)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard19"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode6"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard19"]
+[node name="guardViewArea" type="Area2D" parent="guardNode6"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard19/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode6/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard19"]
+[node name="Label" type="Label" parent="guardNode6"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1149,74 +1252,82 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard19"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode6"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard19"]
+[node name="hitbox" type="Area2D" parent="guardNode6"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard19/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode6/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard19"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode6"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard19"]
+[node name="path" type="Node2D" parent="guardNode6"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D3" type="Node2D" parent="guard19/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode6/path"]
 position = Vector2(-199.218, -747.691)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard19/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode6/path"]
 position = Vector2(730.149, -720.188)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D" type="Node2D" parent="guard19/path"]
+[node name="Node2D" type="Node2D" parent="guardNode6/path"]
 position = Vector2(919.545, 51.0197)
 
-[node name="Node2D4" type="Node2D" parent="guard19/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode6/path"]
 position = Vector2(2456.18, 234.546)
 
-[node name="Node2D5" type="Node2D" parent="guard19/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode6/path"]
 position = Vector2(689.474, 515.433)
 
-[node name="Node2D6" type="Node2D" parent="guard19/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode6/path"]
 position = Vector2(-248.945, 489.137)
 
-[node name="guard5" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode7" type="Node2D" parent="."]
 position = Vector2(1281, -601.93)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard5"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode7"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard5"]
+[node name="guardViewArea" type="Area2D" parent="guardNode7"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard5/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode7/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard5"]
+[node name="Label" type="Label" parent="guardNode7"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1224,74 +1335,82 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard5"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode7"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard5"]
+[node name="hitbox" type="Area2D" parent="guardNode7"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard5/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode7/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard5"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode7"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard5"]
+[node name="path" type="Node2D" parent="guardNode7"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D3" type="Node2D" parent="guard5/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode7/path"]
 position = Vector2(-214.815, -84.583)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard5/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode7/path"]
 position = Vector2(-212.489, -1134.36)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D" type="Node2D" parent="guard5/path"]
+[node name="Node2D" type="Node2D" parent="guardNode7/path"]
 position = Vector2(-907.777, -1170.24)
 
-[node name="Node2D4" type="Node2D" parent="guard5/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode7/path"]
 position = Vector2(312.269, -1146.3)
 
-[node name="Node2D6" type="Node2D" parent="guard5/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode7/path"]
 position = Vector2(-189.044, -1122.93)
 
-[node name="Node2D5" type="Node2D" parent="guard5/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode7/path"]
 position = Vector2(-234.851, 902.535)
 
-[node name="guard6" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode8" type="Node2D" parent="."]
 position = Vector2(1272.12, -1024.03)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard6"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode8"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard6"]
+[node name="guardViewArea" type="Area2D" parent="guardNode8"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard6/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode8/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard6"]
+[node name="Label" type="Label" parent="guardNode8"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1299,77 +1418,85 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard6"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode8"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard6"]
+[node name="hitbox" type="Area2D" parent="guardNode8"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard6/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode8/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard6"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode8"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard6"]
+[node name="path" type="Node2D" parent="guardNode8"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D3" type="Node2D" parent="guard6/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode8/path"]
 position = Vector2(-205.484, -19.2721)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard6/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode8/path"]
 position = Vector2(188.708, -39.6184)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D" type="Node2D" parent="guard6/path"]
+[node name="Node2D" type="Node2D" parent="guardNode8/path"]
 position = Vector2(175.742, -581.431)
 
-[node name="Node2D4" type="Node2D" parent="guard6/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode8/path"]
 position = Vector2(-1395.52, -584.703)
 
-[node name="Node2D6" type="Node2D" parent="guard6/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode8/path"]
 position = Vector2(-1399.84, -24.1402)
 
-[node name="Node2D5" type="Node2D" parent="guard6/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode8/path"]
 position = Vector2(-201.636, -16.0875)
 
-[node name="Node2D7" type="Node2D" parent="guard6/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode8/path"]
 position = Vector2(-89.0526, 969.544)
 
-[node name="guard7" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode9" type="Node2D" parent="."]
 position = Vector2(897.707, -1042.66)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard7"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode9"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard7"]
+[node name="guardViewArea" type="Area2D" parent="guardNode9"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard7/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode9/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard7"]
+[node name="Label" type="Label" parent="guardNode9"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1377,77 +1504,85 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard7"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode9"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard7"]
+[node name="hitbox" type="Area2D" parent="guardNode9"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard7/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode9/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard7"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode9"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard7"]
+[node name="path" type="Node2D" parent="guardNode9"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D3" type="Node2D" parent="guard7/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode9/path"]
 position = Vector2(-207.608, -97.8683)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard7/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode9/path"]
 position = Vector2(639.039, -41.7424)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D" type="Node2D" parent="guard7/path"]
+[node name="Node2D" type="Node2D" parent="guardNode9/path"]
 position = Vector2(-208.739, -33.3868)
 
-[node name="Node2D4" type="Node2D" parent="guard7/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode9/path"]
 position = Vector2(-242.079, 647.337)
 
-[node name="Node2D6" type="Node2D" parent="guard7/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode9/path"]
 position = Vector2(-1270.26, 649.233)
 
-[node name="Node2D5" type="Node2D" parent="guard7/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode9/path"]
 position = Vector2(-1293.48, -69.1929)
 
-[node name="Node2D7" type="Node2D" parent="guard7/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode9/path"]
 position = Vector2(-1924.37, -101.056)
 
-[node name="guard8" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode10" type="Node2D" parent="."]
 position = Vector2(280.1, -1043)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard8"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode10"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard8"]
+[node name="guardViewArea" type="Area2D" parent="guardNode10"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard8/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode10/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard8"]
+[node name="Label" type="Label" parent="guardNode10"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1455,62 +1590,70 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard8"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode10"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard8"]
+[node name="hitbox" type="Area2D" parent="guardNode10"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard8/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode10/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard8"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode10"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard8"]
+[node name="path" type="Node2D" parent="guardNode10"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D3" type="Node2D" parent="guard8/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode10/path"]
 position = Vector2(1379.55, -23.3127)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard8/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode10/path"]
 position = Vector2(-2347.39, -40.5909)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard9" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode11" type="Node2D" parent="."]
 position = Vector2(-267.44, -1043.52)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard9"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode11"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard9"]
+[node name="guardViewArea" type="Area2D" parent="guardNode11"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard9/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode11/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard9"]
+[node name="Label" type="Label" parent="guardNode11"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1518,82 +1661,90 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard9"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode11"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard9"]
+[node name="hitbox" type="Area2D" parent="guardNode11"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard9/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode11/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard9"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode11"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard9"]
+[node name="path" type="Node2D" parent="guardNode11"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D3" type="Node2D" parent="guard9/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode11/path"]
 position = Vector2(561.88, -29.2681)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard9/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode11/path"]
 position = Vector2(544.215, -382.678)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D4" type="Node2D" parent="guard9/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode11/path"]
 position = Vector2(-864.303, -385.248)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D5" type="Node2D" parent="guard9/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode11/path"]
 position = Vector2(-874.584, -15.127)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D6" type="Node2D" parent="guard9/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode11/path"]
 position = Vector2(-126.63, -20.267)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D7" type="Node2D" parent="guard9/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode11/path"]
 position = Vector2(-116.349, 478.369)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D8" type="Node2D" parent="guard9/path"]
+[node name="Node2D8" type="Node2D" parent="guardNode11/path"]
 position = Vector2(-124.06, -4.84464)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard21" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode12" type="Node2D" parent="."]
 position = Vector2(-319.579, -1098.26)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard21"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode12"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard21"]
+[node name="guardViewArea" type="Area2D" parent="guardNode12"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard21/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode12/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard21"]
+[node name="Label" type="Label" parent="guardNode12"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1601,82 +1752,90 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard21"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode12"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard21"]
+[node name="hitbox" type="Area2D" parent="guardNode12"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard21/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode12/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard21"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode12"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard21"]
+[node name="path" type="Node2D" parent="guardNode12"]
 position = Vector2(550.01, 391.318)
 
-[node name="Node2D4" type="Node2D" parent="guard21/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode12/path"]
 position = Vector2(-864.303, -385.248)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D5" type="Node2D" parent="guard21/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode12/path"]
 position = Vector2(-874.584, -15.127)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D6" type="Node2D" parent="guard21/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode12/path"]
 position = Vector2(-126.63, -20.267)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D7" type="Node2D" parent="guard21/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode12/path"]
 position = Vector2(-116.349, 478.369)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D8" type="Node2D" parent="guard21/path"]
+[node name="Node2D8" type="Node2D" parent="guardNode12/path"]
 position = Vector2(-124.06, -4.84464)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D3" type="Node2D" parent="guard21/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode12/path"]
 position = Vector2(561.88, -29.2686)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard21/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode12/path"]
 position = Vector2(544.215, -382.678)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard10" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode13" type="Node2D" parent="."]
 position = Vector2(-322.194, -853.289)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard10"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode13"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard10"]
+[node name="guardViewArea" type="Area2D" parent="guardNode13"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard10/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode13/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard10"]
+[node name="Label" type="Label" parent="guardNode13"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1684,62 +1843,70 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard10"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode13"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard10"]
+[node name="hitbox" type="Area2D" parent="guardNode13"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard10/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode13/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard10"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode13"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard10"]
+[node name="path" type="Node2D" parent="guardNode13"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D3" type="Node2D" parent="guard10/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode13/path"]
 position = Vector2(442.712, -10.575)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard10/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode13/path"]
 position = Vector2(-655.247, -29.8963)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard11" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode14" type="Node2D" parent="."]
 position = Vector2(-244.798, -444.208)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard11"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode14"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard11"]
+[node name="guardViewArea" type="Area2D" parent="guardNode14"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard11/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode14/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard11"]
+[node name="Label" type="Label" parent="guardNode14"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1747,86 +1914,94 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard11"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode14"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard11"]
+[node name="hitbox" type="Area2D" parent="guardNode14"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard11/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode14/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard11"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode14"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard11"]
+[node name="path" type="Node2D" parent="guardNode14"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D3" type="Node2D" parent="guard11/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode14/path"]
 position = Vector2(-281.082, -468.601)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard11/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode14/path"]
 position = Vector2(-1008.66, -535.986)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D4" type="Node2D" parent="guard11/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode14/path"]
 position = Vector2(-1022.8, -1446.38)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D5" type="Node2D" parent="guard11/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode14/path"]
 position = Vector2(-1022.8, -575.568)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D6" type="Node2D" parent="guard11/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode14/path"]
 position = Vector2(-590.219, -490.749)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D7" type="Node2D" parent="guard11/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode14/path"]
 position = Vector2(-608.468, 445.607)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D8" type="Node2D" parent="guard11/path"]
+[node name="Node2D8" type="Node2D" parent="guardNode14/path"]
 position = Vector2(-564.773, 13.7992)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D9" type="Node2D" parent="guard11/path"]
+[node name="Node2D9" type="Node2D" parent="guardNode14/path"]
 position = Vector2(-197.865, -15.1673)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard20" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode15" type="Node2D" parent="."]
 position = Vector2(-367.956, -571.564)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard20"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode15"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard20"]
+[node name="guardViewArea" type="Area2D" parent="guardNode15"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard20/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode15/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard20"]
+[node name="Label" type="Label" parent="guardNode15"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1834,86 +2009,94 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard20"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode15"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard20"]
+[node name="hitbox" type="Area2D" parent="guardNode15"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard20/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode15/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard20"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode15"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard20"]
+[node name="path" type="Node2D" parent="guardNode15"]
 position = Vector2(1021.53, 874.206)
 
-[node name="Node2D5" type="Node2D" parent="guard20/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode15/path"]
 position = Vector2(-1022.8, -575.568)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D6" type="Node2D" parent="guard20/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode15/path"]
 position = Vector2(-590.219, -490.749)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D7" type="Node2D" parent="guard20/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode15/path"]
 position = Vector2(-608.468, 445.607)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D8" type="Node2D" parent="guard20/path"]
+[node name="Node2D8" type="Node2D" parent="guardNode15/path"]
 position = Vector2(-564.773, 13.7992)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D9" type="Node2D" parent="guard20/path"]
+[node name="Node2D9" type="Node2D" parent="guardNode15/path"]
 position = Vector2(-195.934, -20.9606)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D3" type="Node2D" parent="guard20/path"]
+[node name="Node2D3" type="Node2D" parent="guardNode15/path"]
 position = Vector2(-281.082, -468.601)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard20/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode15/path"]
 position = Vector2(-1008.66, -535.986)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D4" type="Node2D" parent="guard20/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode15/path"]
 position = Vector2(-1022.8, -1446.38)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard12" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode16" type="Node2D" parent="."]
 position = Vector2(-265.324, -250.747)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard12"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode16"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard12"]
+[node name="guardViewArea" type="Area2D" parent="guardNode16"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard12/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode16/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard12"]
+[node name="Label" type="Label" parent="guardNode16"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1921,70 +2104,78 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard12"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode16"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard12"]
+[node name="hitbox" type="Area2D" parent="guardNode16"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard12/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode16/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard12"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode16"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard12"]
+[node name="path" type="Node2D" parent="guardNode16"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D2" type="Node2D" parent="guard12/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode16/path"]
 position = Vector2(47.6471, -182.595)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D4" type="Node2D" parent="guard12/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode16/path"]
 position = Vector2(43.1658, 343.744)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D5" type="Node2D" parent="guard12/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode16/path"]
 position = Vector2(-1088.46, -199.005)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D6" type="Node2D" parent="guard12/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode16/path"]
 position = Vector2(-1105.1, 364.095)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard13" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode17" type="Node2D" parent="."]
 position = Vector2(-220.245, -632.415)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard13"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode17"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard13"]
+[node name="guardViewArea" type="Area2D" parent="guardNode17"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard13/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode17/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard13"]
+[node name="Label" type="Label" parent="guardNode17"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -1992,82 +2183,90 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard13"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode17"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard13"]
+[node name="hitbox" type="Area2D" parent="guardNode17"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard13/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode17/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard13"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode17"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard13"]
+[node name="path" type="Node2D" parent="guardNode17"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D2" type="Node2D" parent="guard13/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode17/path"]
 position = Vector2(-381.717, 115.238)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D4" type="Node2D" parent="guard13/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode17/path"]
 position = Vector2(-392.208, -881.624)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D5" type="Node2D" parent="guard13/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode17/path"]
 position = Vector2(-382.728, -153.361)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D6" type="Node2D" parent="guard13/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode17/path"]
 position = Vector2(388.864, -148.523)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D7" type="Node2D" parent="guard13/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode17/path"]
 position = Vector2(-374.797, -153.79)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D8" type="Node2D" parent="guard13/path"]
+[node name="Node2D8" type="Node2D" parent="guardNode17/path"]
 position = Vector2(-387.085, 135.875)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D9" type="Node2D" parent="guard13/path"]
+[node name="Node2D9" type="Node2D" parent="guardNode17/path"]
 position = Vector2(390.619, 185.03)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard14" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode18" type="Node2D" parent="."]
 position = Vector2(69.7248, -420.681)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard14"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode18"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard14"]
+[node name="guardViewArea" type="Area2D" parent="guardNode18"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard14/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode18/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard14"]
+[node name="Label" type="Label" parent="guardNode18"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -2075,94 +2274,102 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard14"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode18"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard14"]
+[node name="hitbox" type="Area2D" parent="guardNode18"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard14/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode18/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard14"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode18"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard14"]
+[node name="path" type="Node2D" parent="guardNode18"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D2" type="Node2D" parent="guard14/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode18/path"]
 position = Vector2(960.976, -215.94)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D4" type="Node2D" parent="guard14/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode18/path"]
 position = Vector2(1698.58, -183.419)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D5" type="Node2D" parent="guard14/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode18/path"]
 position = Vector2(1676.12, -2196.66)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D6" type="Node2D" parent="guard14/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode18/path"]
 position = Vector2(463.505, -2229.15)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D7" type="Node2D" parent="guard14/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode18/path"]
 position = Vector2(390.275, -1388.48)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D8" type="Node2D" parent="guard14/path"]
+[node name="Node2D8" type="Node2D" parent="guardNode18/path"]
 position = Vector2(-503.65, -1429.63)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D9" type="Node2D" parent="guard14/path"]
+[node name="Node2D9" type="Node2D" parent="guardNode18/path"]
 position = Vector2(-501.685, -76.4938)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D10" type="Node2D" parent="guard14/path"]
+[node name="Node2D10" type="Node2D" parent="guardNode18/path"]
 position = Vector2(-1604.29, -16.2832)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D11" type="Node2D" parent="guard14/path"]
+[node name="Node2D11" type="Node2D" parent="guardNode18/path"]
 position = Vector2(-1653.21, 1511.56)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D12" type="Node2D" parent="guard14/path"]
+[node name="Node2D12" type="Node2D" parent="guardNode18/path"]
 position = Vector2(849.289, 1500.27)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard15" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode19" type="Node2D" parent="."]
 position = Vector2(349.76, -633.098)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard15"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode19"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard15"]
+[node name="guardViewArea" type="Area2D" parent="guardNode19"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard15/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode19/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard15"]
+[node name="Label" type="Label" parent="guardNode19"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -2170,86 +2377,94 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard15"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode19"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard15"]
+[node name="hitbox" type="Area2D" parent="guardNode19"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard15/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode19/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard15"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode19"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard15"]
+[node name="path" type="Node2D" parent="guardNode19"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D2" type="Node2D" parent="guard15/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode19/path"]
 position = Vector2(-163.719, -730.477)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D4" type="Node2D" parent="guard15/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode19/path"]
 position = Vector2(-824.017, -784.471)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D5" type="Node2D" parent="guard15/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode19/path"]
 position = Vector2(-942.42, 2937.81)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D6" type="Node2D" parent="guard15/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode19/path"]
 position = Vector2(-1580.74, 2933.88)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D13" type="Node2D" parent="guard15/path"]
+[node name="Node2D13" type="Node2D" parent="guardNode19/path"]
 position = Vector2(-1525.68, 1508.04)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D14" type="Node2D" parent="guard15/path"]
+[node name="Node2D14" type="Node2D" parent="guardNode19/path"]
 position = Vector2(-1636.95, 1150.31)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D7" type="Node2D" parent="guard15/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode19/path"]
 position = Vector2(-1605.53, 16.8116)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D8" type="Node2D" parent="guard15/path"]
+[node name="Node2D8" type="Node2D" parent="guardNode19/path"]
 position = Vector2(-193.107, 32.9298)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard16" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode20" type="Node2D" parent="."]
 position = Vector2(61.3141, -624.066)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard16"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode20"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard16"]
+[node name="guardViewArea" type="Area2D" parent="guardNode20"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard16/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode20/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard16"]
+[node name="Label" type="Label" parent="guardNode20"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -2257,102 +2472,110 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard16"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode20"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard16"]
+[node name="hitbox" type="Area2D" parent="guardNode20"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard16/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode20/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard16"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode20"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard16"]
+[node name="path" type="Node2D" parent="guardNode20"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D2" type="Node2D" parent="guard16/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode20/path"]
 position = Vector2(-434.667, -43.2141)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D4" type="Node2D" parent="guard16/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode20/path"]
 position = Vector2(-447.701, 1270.21)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D5" type="Node2D" parent="guard16/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode20/path"]
 position = Vector2(-287.631, 1507.81)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D6" type="Node2D" parent="guard16/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode20/path"]
 position = Vector2(-282.447, 2869.91)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D13" type="Node2D" parent="guard16/path"]
+[node name="Node2D13" type="Node2D" parent="guardNode20/path"]
 position = Vector2(-980.018, 2877.83)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D14" type="Node2D" parent="guard16/path"]
+[node name="Node2D14" type="Node2D" parent="guardNode20/path"]
 position = Vector2(-939.632, 1422.76)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D7" type="Node2D" parent="guard16/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode20/path"]
 position = Vector2(-1549.09, 1345.21)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D8" type="Node2D" parent="guard16/path"]
+[node name="Node2D8" type="Node2D" parent="guardNode20/path"]
 position = Vector2(-1600.53, 2877.88)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D9" type="Node2D" parent="guard16/path"]
+[node name="Node2D9" type="Node2D" parent="guardNode20/path"]
 position = Vector2(-294.712, 2877.88)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D10" type="Node2D" parent="guard16/path"]
+[node name="Node2D10" type="Node2D" parent="guardNode20/path"]
 position = Vector2(-257.08, 1451.64)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D12" type="Node2D" parent="guard16/path"]
+[node name="Node2D12" type="Node2D" parent="guardNode20/path"]
 position = Vector2(282.007, 1181.29)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D11" type="Node2D" parent="guard16/path"]
+[node name="Node2D11" type="Node2D" parent="guardNode20/path"]
 position = Vector2(250.946, -53.6227)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard17" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode21" type="Node2D" parent="."]
 position = Vector2(395.944, -875.682)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard17"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode21"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard17"]
+[node name="guardViewArea" type="Area2D" parent="guardNode21"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard17/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode21/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard17"]
+[node name="Label" type="Label" parent="guardNode21"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -2360,70 +2583,78 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard17"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode21"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard17"]
+[node name="hitbox" type="Area2D" parent="guardNode21"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard17/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode21/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard17"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode21"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard17"]
+[node name="path" type="Node2D" parent="guardNode21"]
 position = Vector2(200.482, 28.2731)
 
-[node name="Node2D2" type="Node2D" parent="guard17/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode21/path"]
 position = Vector2(-200.474, -328.998)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D4" type="Node2D" parent="guard17/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode21/path"]
 position = Vector2(1525.48, -408.438)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D5" type="Node2D" parent="guard17/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode21/path"]
 position = Vector2(-926.711, -382.395)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D6" type="Node2D" parent="guard17/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode21/path"]
 position = Vector2(-686.002, 125.1)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="guard18" type="Sprite2D" parent="."]
-z_index = 3
+[node name="guardNode22" type="Node2D" parent="."]
 position = Vector2(350.227, -928.864)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_al2iq")
 script = ExtResource("4_dmtm4")
 
-[node name="Polygon2D" type="Polygon2D" parent="guard18"]
+[node name="Polygon2D" type="Polygon2D" parent="guardNode22"]
 z_index = 3
-position = Vector2(2.66683, 0)
+position = Vector2(508.818, -566.235)
+scale = Vector2(0.215, 0.215)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-2, 0, -206.667, -280, -113.333, -360, 113.333, -360, 193.333, -273.333)
 vertex_colors = PackedColorArray(0, 1, 0, 1, 0, 0.886275, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.886275, 0, 0)
 
-[node name="guardViewArea" type="Area2D" parent="guard18"]
+[node name="guardViewArea" type="Area2D" parent="guardNode22"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guard18/guardViewArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="guardNode22/guardViewArea"]
 z_index = 3
 position = Vector2(2, 2)
 polygon = PackedVector2Array(0.666504, -1.99976, 191.333, -275.333, 111.333, -362, -115.333, -362, -208.667, -282)
 
-[node name="Label" type="Label" parent="guard18"]
+[node name="Label" type="Label" parent="guardNode22"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -200.0
-offset_right = -82.0
-offset_bottom = -109.0
+offset_left = 476.425
+offset_top = -604.075
+offset_right = 558.425
+offset_bottom = -513.075
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(18.23, 46.575)
@@ -2431,39 +2662,47 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "!!"
 
-[node name="PointLight2D2" type="PointLight2D" parent="guard18"]
+[node name="PointLight2D2" type="PointLight2D" parent="guardNode22"]
 visible = false
-scale = Vector2(33.3333, 33.3333)
+position = Vector2(508.245, -566.235)
+scale = Vector2(7.16666, 7.16666)
 energy = 0.7
 texture = SubResource("GradientTexture2D_1xypn")
 
-[node name="hitbox" type="Area2D" parent="guard18"]
+[node name="hitbox" type="Area2D" parent="guardNode22"]
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.215, 0.215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guard18/hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="guardNode22/hitbox"]
 shape = SubResource("RectangleShape2D_vdgl5")
 
-[node name="Node2D" type="Node2D" parent="guard18"]
+[node name="guard" type="AnimatedSprite2D" parent="guardNode22"]
+z_index = 3
+position = Vector2(508.245, -566.235)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_whxvq")
+animation = &"walk_W"
 
-[node name="path" type="Node2D" parent="guard18"]
+[node name="path" type="Node2D" parent="guardNode22"]
 position = Vector2(-1031.1, 438.8)
 
-[node name="Node2D4" type="Node2D" parent="guard18/path"]
+[node name="Node2D4" type="Node2D" parent="guardNode22/path"]
 position = Vector2(1656.11, -458.199)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D5" type="Node2D" parent="guard18/path"]
+[node name="Node2D5" type="Node2D" parent="guardNode22/path"]
 position = Vector2(914.438, -161.581)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D7" type="Node2D" parent="guard18/path"]
+[node name="Node2D7" type="Node2D" parent="guardNode22/path"]
 position = Vector2(566.113, 258.276)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D6" type="Node2D" parent="guard18/path"]
+[node name="Node2D6" type="Node2D" parent="guardNode22/path"]
 position = Vector2(-203.944, 230.841)
 scale = Vector2(6.66667, 6.66667)
 
-[node name="Node2D2" type="Node2D" parent="guard18/path"]
+[node name="Node2D2" type="Node2D" parent="guardNode22/path"]
 position = Vector2(-203.584, -518.711)
 scale = Vector2(6.66667, 6.66667)
 
@@ -2797,72 +3036,69 @@ libraries = {
 }
 autoplay = "Fade"
 
-[connection signal="body_entered" from="guard/guardViewArea" to="guard" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard/guardViewArea" to="guard" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard/hitbox" to="guard" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard2/guardViewArea" to="guard2" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard2/guardViewArea" to="guard2" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard2/hitbox" to="guard2" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard22/guardViewArea" to="guard22" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard22/guardViewArea" to="guard22" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard22/hitbox" to="guard22" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard3/guardViewArea" to="guard3" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard3/guardViewArea" to="guard3" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard3/hitbox" to="guard3" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard4/guardViewArea" to="guard4" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard4/guardViewArea" to="guard4" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard4/hitbox" to="guard4" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard19/guardViewArea" to="guard19" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard19/guardViewArea" to="guard19" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard19/hitbox" to="guard19" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard5/guardViewArea" to="guard5" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard5/guardViewArea" to="guard5" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard5/hitbox" to="guard5" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard6/guardViewArea" to="guard6" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard6/guardViewArea" to="guard6" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard6/hitbox" to="guard6" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard7/guardViewArea" to="guard7" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard7/guardViewArea" to="guard7" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard7/hitbox" to="guard7" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard8/guardViewArea" to="guard8" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard8/guardViewArea" to="guard8" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard8/hitbox" to="guard8" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard9/guardViewArea" to="guard9" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard9/guardViewArea" to="guard9" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard9/hitbox" to="guard9" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard21/guardViewArea" to="guard21" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard21/guardViewArea" to="guard21" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard21/hitbox" to="guard21" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard10/guardViewArea" to="guard10" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard10/guardViewArea" to="guard10" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard10/hitbox" to="guard10" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard11/guardViewArea" to="guard11" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard11/guardViewArea" to="guard11" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard11/hitbox" to="guard11" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard20/guardViewArea" to="guard20" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard20/guardViewArea" to="guard20" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard20/hitbox" to="guard20" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard12/guardViewArea" to="guard12" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard12/guardViewArea" to="guard12" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard12/hitbox" to="guard12" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard13/guardViewArea" to="guard13" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard13/guardViewArea" to="guard13" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard13/hitbox" to="guard13" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard14/guardViewArea" to="guard14" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard14/guardViewArea" to="guard14" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard14/hitbox" to="guard14" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard15/guardViewArea" to="guard15" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard15/guardViewArea" to="guard15" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard15/hitbox" to="guard15" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard16/guardViewArea" to="guard16" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard16/guardViewArea" to="guard16" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard16/hitbox" to="guard16" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard17/guardViewArea" to="guard17" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard17/guardViewArea" to="guard17" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard17/hitbox" to="guard17" method="_on_hitbox_input_event"]
-[connection signal="body_entered" from="guard18/guardViewArea" to="guard18" method="_on_guard_view_area_body_entered"]
-[connection signal="body_exited" from="guard18/guardViewArea" to="guard18" method="_on_guard_view_area_body_exited"]
-[connection signal="input_event" from="guard18/hitbox" to="guard18" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode/guardViewArea" to="guardNode/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode/guardViewArea" to="guardNode/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode/hitbox" to="guardNode/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode3/guardViewArea" to="guardNode3/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode3/guardViewArea" to="guardNode3/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode3/hitbox" to="guardNode3/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode4/guardViewArea" to="guardNode4/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode4/guardViewArea" to="guardNode4/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode4/hitbox" to="guardNode4/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode5/guardViewArea" to="guardNode5/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode5/guardViewArea" to="guardNode5/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode5/hitbox" to="guardNode5/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode6/guardViewArea" to="guardNode6/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode6/guardViewArea" to="guardNode6/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode6/hitbox" to="guardNode6/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode7/guardViewArea" to="guardNode7/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode7/guardViewArea" to="guardNode7/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode7/hitbox" to="guardNode7/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode8/guardViewArea" to="guardNode8/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode8/guardViewArea" to="guardNode8/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode8/hitbox" to="guardNode8/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode9/guardViewArea" to="guardNode9/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode9/guardViewArea" to="guardNode9/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode9/hitbox" to="guardNode9/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode10/guardViewArea" to="guardNode10/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode10/guardViewArea" to="guardNode10/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode10/hitbox" to="guardNode10/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode11/guardViewArea" to="guardNode11/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode11/guardViewArea" to="guardNode11/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode11/hitbox" to="guardNode11/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode12/guardViewArea" to="guardNode12/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode12/guardViewArea" to="guardNode12/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode12/hitbox" to="guardNode12/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode13/guardViewArea" to="guardNode13/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode13/guardViewArea" to="guardNode13/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode13/hitbox" to="guardNode13/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode14/guardViewArea" to="guardNode14/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode14/guardViewArea" to="guardNode14/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode14/hitbox" to="guardNode14/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode15/guardViewArea" to="guardNode15/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode15/guardViewArea" to="guardNode15/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode15/hitbox" to="guardNode15/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode16/guardViewArea" to="guardNode16/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode16/guardViewArea" to="guardNode16/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode16/hitbox" to="guardNode16/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode17/guardViewArea" to="guardNode17/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode17/guardViewArea" to="guardNode17/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode17/hitbox" to="guardNode17/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode18/guardViewArea" to="guardNode18/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode18/guardViewArea" to="guardNode18/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode18/hitbox" to="guardNode18/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode19/guardViewArea" to="guardNode19/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode19/guardViewArea" to="guardNode19/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode19/hitbox" to="guardNode19/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode20/guardViewArea" to="guardNode20/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode20/guardViewArea" to="guardNode20/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode20/hitbox" to="guardNode20/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode21/guardViewArea" to="guardNode21/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode21/guardViewArea" to="guardNode21/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode21/hitbox" to="guardNode21/guard" method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="guardNode22/guardViewArea" to="guardNode22/guard" method="_on_guard_view_area_body_entered"]
+[connection signal="body_exited" from="guardNode22/guardViewArea" to="guardNode22/guard" method="_on_guard_view_area_body_exited"]
+[connection signal="input_event" from="guardNode22/hitbox" to="guardNode22/guard" method="_on_hitbox_input_event"]
 [connection signal="input_event" from="doors/area1" to="doors" method="_on_area_input_event" binds= [1]]
 [connection signal="input_event" from="doors/area2" to="doors" method="_on_area_input_event" binds= [2]]
 [connection signal="input_event" from="doors/area3" to="doors" method="_on_area_input_event" binds= [3]]

@@ -12,8 +12,8 @@ func _on_area_input_event(viewport: Node, event: InputEvent, shape_idx: int, ext
 		var diffVect = get_node("area%d" % extra_arg_0).get_global_position() - player.get_global_position()
 		var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
 		print("door at dist: %f" % dist)
-		if dist < 30 and player.keycards > 0:
-			player.decrementKeycards()
+		if dist < 2.0 and player.keycards > 0:
+			
 			
 			var mouse :Vector2 = get_global_mouse_position()
 			var cell :Vector2i = tilemaplayer.local_to_map(tilemaplayer.to_local(mouse))
@@ -21,6 +21,7 @@ func _on_area_input_event(viewport: Node, event: InputEvent, shape_idx: int, ext
 			
 			#UP door
 			if(tempCoords == Vector2i(15, 2)):
+				player.decrementKeycards()
 				
 				tilemaplayer.set_cell(cell, 0, Vector2(16, 2), 0)
 				
@@ -34,6 +35,7 @@ func _on_area_input_event(viewport: Node, event: InputEvent, shape_idx: int, ext
 				
 			#LEFT going door
 			elif(tempCoords == Vector2i(15, 3)):
+				player.decrementKeycards()
 				
 				tilemaplayer.set_cell(Vector2(cell.x - 1, cell.y - 1), 0, Vector2(15, 1))
 				tilemaplayer.set_cell(Vector2(cell.x - 1, cell.y - 2), 0, Vector2(15, 0))
@@ -45,6 +47,7 @@ func _on_area_input_event(viewport: Node, event: InputEvent, shape_idx: int, ext
 			
 			#RIGHT going door
 			elif(tempCoords == Vector2i(16, 4)):
+				player.decrementKeycards()
 				
 				tilemaplayer.set_cell(Vector2(cell.x + 1, cell.y + 1), 0, Vector2(15, 0))
 				tilemaplayer.set_cell(Vector2(cell.x + 1, cell.y + 2), 0, Vector2(15, 1))

@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 @onready var animator = get_node("animator")
-@onready var keycards = 10
+@onready var keycards = 1
 @onready var keycardHUD = get_node("Camera2D/CanvasLayer/Label")
 
-const speed = 100
+const speed = 30
 var animationOverride = false
 
 func incrementKeycards():
@@ -22,7 +22,7 @@ func updateKeycardHUD():
 func _ready() -> void:
 	updateKeycardHUD()
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	var animation = animator.get_animation()
 	if((animation == "fight_N" or animation == "fight_S" or animation == "fight_E" or animation == "fight_W") and animator.is_playing()):

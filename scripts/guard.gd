@@ -1,7 +1,8 @@
-extends Sprite2D
+extends Node2D
 
 @onready var player = get_node("../player")
 @onready var animator = get_node("../player/animator")
+@onready var myAnimator = get_node("guard")
 @onready var label = get_node("Label")
 @onready var path = get_node("path")
 @onready var viewArea = get_node("guardViewArea")
@@ -50,10 +51,7 @@ func doPathFinding(delta: float):
 	var targetDir = (Vector2.from_angle(dir.angle()) * 100 * delta)
 	var targetAngle = targetDir.angle()
 	
-	if(rot < 0):
-		rot = (2 * PI) + rot
-	if(rot > (2 * PI)):
-		rot = rot % (2 * PI)
+	wrapf(rot, 0, TAU)
 		
 	if(targetAngle < 0):
 		targetAngle = (2 * PI) + targetAngle
@@ -73,6 +71,23 @@ func doPathFinding(delta: float):
 		routineIndx += 1
 		if routineIndx >= routine.size():
 			routineIndx = 0
+			
+
+	if(rot >= PI*0.25 and rot < PI*0.75):
+		myAnimator.play("walk_S")
+		pass
+	elif(rot >= PI*0.75 and rot < PI*1.25):
+		#left
+		myAnimator.play("walk_W")
+		pass
+	elif(rot >= PI*1.25 and rot < PI*1.75):
+		#down
+		myAnimator.play("walk_N")
+		pass
+	elif(rot >= PI*1.75 or rot < PI*0.25):
+		#right
+		myAnimator.play("walk_E")
+		pass
 
 func checkPlayerLight():
 	await RenderingServer.frame_post_draw
@@ -100,7 +115,7 @@ func onAlert():
 	print("dist %f" % dist)
 		
 	if(alert >= 1):
-		#gameOver()
+		gameOver()
 		alert = 0
 		label.hide()
 		return
@@ -112,7 +127,7 @@ func onAlert():
 	await get_tree().create_timer(0.5).timeout
 	
 	if(inside == true):
-		#gameOver()
+		gameOver()
 		alert = 0
 		label.hide()
 		return
@@ -126,26 +141,11 @@ func onAlert():
 func _on_guard_view_area_body_exited(body: Node2D) -> void:
 	if(body != player):
 		inside = false
-	
-
-func castRay(angle: float) -> Dictionary:
-	
-	var rayLength = 2
-	var space_state = get_world_2d().direct_space_state
-	# use global coordinates, not local to node
-	var query = PhysicsRayQueryParameters2D.create(self.get_global_position(), self.get_global_position() + (Vector2.from_angle(angle) * rayLength) + Vector2.from_angle(self.get_rotation()), 2)
-	var result = space_state.intersect_ray(query)
-	
-	var line = Line2D.new()
-	line.add_point(Vector2(self.get_global_position()))
-	line.add_point((Vector2.from_angle(angle) * rayLength) + self.get_position() + Vector2.from_angle(self.get_rotation()))
-	#add_child(line)
-	
-	return result
-
 
 func gameOver():
+	print("gameover")
 	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+	get_node("..").set_process(false)
 
 func _on_hitbox_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton \
