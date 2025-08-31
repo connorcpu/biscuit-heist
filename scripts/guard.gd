@@ -161,7 +161,7 @@ func _on_hitbox_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 			#diff vect points player to guard
 			var angle = wrapf(diffVect.angle(), 0.0, TAU)
 			if(angle >= PI*0.25 and angle < PI*0.75):
-				animator.play("fight_N")
+				animator.play("fight_S")
 				pass
 			elif(angle >= PI*0.75 and angle < PI*1.25):
 				#left
@@ -169,7 +169,7 @@ func _on_hitbox_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 				pass
 			elif(angle >= PI*1.25 and angle < PI*1.75):
 				#down
-				animator.play("fight_S")
+				animator.play("fight_N")
 				pass
 			elif(angle >= PI*1.75 or angle < PI*0.25):
 				#right
