@@ -686,7 +686,6 @@ material = SubResource("CanvasItemMaterial_61od6")
 script = ExtResource("1_w16ng")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="player" type="CharacterBody2D" parent="."]
