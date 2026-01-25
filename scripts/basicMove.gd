@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 @onready var animator = get_node("animator")
-@onready var keycards = 10
+@onready var keycards = 2
 @onready var keycardHUD = get_node("Camera2D/CanvasLayer/Label")
 
-const speed = 100
+const speed = 30
 var animationOverride = false
 
 func incrementKeycards():
@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 			animator.play("flying_S")
 		
 	if(Input.is_action_pressed("sneak")):
-		velocity *= 0.5
+		velocity /= 1.5
 		
 	#player.set_global_position(pos)
 	#print("x: %f y: %f" % [pos.x, pos.y])

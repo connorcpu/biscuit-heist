@@ -15,8 +15,14 @@ run/main_scene="uid://bom0kk1o62pxm"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/images/icon.svg"
 
+[display]
+
+window/size/resizable=false
+window/stretch/mode="viewport"
+
 [editor]
 
+movie_writer/movie_file="C:/Users/fermi/OneDrive/Documenten/GitHub/biscuit-heist/Filmpje Biscuit-Heist.avi"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 

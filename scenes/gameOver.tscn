@@ -1,0 +1,117 @@
+[gd_scene load_steps=3 format=3 uid="uid://ge25ob53covy"]
+
+[ext_resource type="Script" uid="uid://0ujmdo036pbm" path="res://scripts/gameOver.gd" id="1_dh54o"]
+[ext_resource type="FontFile" uid="uid://dtyy2qn2qvwsm" path="res://assets/fonts/Quaver v1.0/quaver.ttf" id="1_ouftm"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_dh54o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.205221, 0.470005, 0.526739, 1)
+
+[node name="left" type="MarginContainer" parent="."]
+offset_left = 25.0
+offset_top = 31.0
+offset_right = 1129.0
+offset_bottom = 625.0
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="left"]
+layout_mode = 2
+
+[node name="title" type="MarginContainer" parent="left/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="left/VBoxContainer/title"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/bold_font = ExtResource("1_ouftm")
+theme_override_font_sizes/bold_font_size = 66
+bbcode_enabled = true
+text = "[center][b]Game Over"
+fit_content = true
+
+[node name="title2" type="MarginContainer" parent="left/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="left/VBoxContainer/title2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/bold_font = ExtResource("1_ouftm")
+theme_override_font_sizes/bold_font_size = 66
+bbcode_enabled = true
+text = "[center]You were spotted!
+Make sure you are not seen during your search!
+"
+fit_content = true
+
+[node name="buttons" type="MarginContainer" parent="left/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="left/VBoxContainer/buttons"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="left/VBoxContainer/buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="play" type="Button" parent="left/VBoxContainer/buttons/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ouftm")
+theme_override_font_sizes/font_size = 33
+text = "PLAY"
+
+[node name="MarginContainer4" type="MarginContainer" parent="left/VBoxContainer/buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="mainMenu" type="Button" parent="left/VBoxContainer/buttons/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ouftm")
+theme_override_font_sizes/font_size = 33
+text = "MAIN MENU"
+
+[node name="MarginContainer3" type="MarginContainer" parent="left/VBoxContainer/buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="quit" type="Button" parent="left/VBoxContainer/buttons/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ouftm")
+theme_override_font_sizes/font_size = 33
+text = "QUIT"
+
+[connection signal="pressed" from="left/VBoxContainer/buttons/VBoxContainer/MarginContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="left/VBoxContainer/buttons/VBoxContainer/MarginContainer4/mainMenu" to="." method="_on_mainMenu_pressed"]
+[connection signal="pressed" from="left/VBoxContainer/buttons/VBoxContainer/MarginContainer3/quit" to="." method="_on_quit_pressed"]

@@ -15,6 +15,7 @@ var prevRot = 0
 var speed = 20
 var inside = false
 var interuptPathFinding = false
+var deadPlayer = false
 
 func _ready() -> void:
 	for i in path.get_children():
@@ -75,20 +76,21 @@ func doPathFinding(delta: float):
 			routineIndx = 0
 
 func checkPlayerLight():
-	await RenderingServer.frame_post_draw
-	var lighthingColour = animator.get_color_difference()
-	var rawBrightness = lighthingColour.get_luminance()
-	#const expectedMin = -0.165
-	#const expectedMax = -0.05
-	var brightness = clampf((rawBrightness + 0.165) * 8.7, 0.0, 1.0)
+	if (deadPlayer == false):
+		await RenderingServer.frame_post_draw
+		var lighthingColour = animator.get_color_difference()
+		var rawBrightness = lighthingColour.get_luminance()
+		#const expectedMin = -0.165
+		#const expectedMax = -0.05
+		var brightness = clampf((rawBrightness + 0.165) * 8.7, 0.0, 1.0)
 
-	
-	var scaleVect = Vector2(1.5 + (brightness), 1.5 + (brightness))
-	viewArea.scale = scaleVect
-	viewAreaIndicator.scale = scaleVect
+		
+		var scaleVect = Vector2(1.5 + (brightness), 1.5 + (brightness))
+		viewArea.scale = scaleVect
+		viewAreaIndicator.scale = scaleVect
 
 func _on_guard_view_area_body_entered(body: Node2D) -> void:
-	if(body != player):
+	if(body != player or self.is_visible_in_tree() == false):
 		return
 	inside = true
 	onAlert()
@@ -100,7 +102,7 @@ func onAlert():
 	print("dist %f" % dist)
 		
 	if(alert >= 1):
-		#gameOver()
+		gameOver()
 		alert = 0
 		label.hide()
 		return
@@ -112,7 +114,7 @@ func onAlert():
 	await get_tree().create_timer(0.5).timeout
 	
 	if(inside == true):
-		#gameOver()
+		gameOver()
 		alert = 0
 		label.hide()
 		return
@@ -124,7 +126,7 @@ func onAlert():
 
 
 func _on_guard_view_area_body_exited(body: Node2D) -> void:
-	if(body != player):
+	if(body != player or self.is_visible_in_tree() == false):
 		inside = false
 	
 
@@ -145,17 +147,17 @@ func castRay(angle: float) -> Dictionary:
 
 
 func gameOver():
-	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/gameOver.tscn")
+	deadPlayer = true
+	
 
 func _on_hitbox_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton \
-	and event.button_index == MOUSE_BUTTON_LEFT \
-	and event.is_pressed():
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 		var diffVect = self.get_global_position() - player.get_global_position()
 		var dist = sqrt(pow(abs(diffVect.x), 2) + pow(abs(diffVect.y), 2))
-		if dist < 30:
+		if dist < 40:
 			player.incrementKeycards()
-			
+			speed = 0
 			animator.stop()
 			#animator.play("fight")
 			#diff vect points player to guard
